@@ -332,9 +332,9 @@ You should to follow this steps:
 
 
 class User:
-    def __init__(self, first_name, last_name, username, password):
-        self.first_name = first_name
-        self.last_name = last_name
+    def __init__(self, firstname, lastname, username, password):
+        self.firstname = firstname
+        self.lastname = lastname
         self.username = username
         self.password = password
 
@@ -344,17 +344,17 @@ class UserManager:
     def __init__(self):
         self.list_of_users = []
     def register(self):
-        first_name = input()
-        last_name = input()
+        firstname = input()
+        lastname = input()
         username = input()
         password = int(input())  
-        user = User(first_name, last_name, username, password)
+        user = User(firstname, lastname, username, password)
         self.list_of_users.append(user)
         print(username)
     def login(self):
-        username = input("Enter Username: ")
-        password = int(input("inter passowrd") )
-        found_user = next((user for user in self.list_of_users if user.username == username), None)
+        username = input("Username: ")
+        password = int(input("passowrd") )
+        found_user = next((user for user in self.list_users if user.username == username), None)
         if found_user:
             print("successful!")
         else:
@@ -376,8 +376,7 @@ class UserManager:
         else:
             print(f"User {username}' not found.")
             
-            
-            
+         
     def GetUser(self):
         print("registered")
         for user in self.list_of_users:
